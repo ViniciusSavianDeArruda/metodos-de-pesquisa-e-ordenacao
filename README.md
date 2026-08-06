@@ -1,2 +1,10 @@
-# metodos-de-pesquisa-e-ordenacao
-Implementações de algoritmos de pesquisa e ordenação, explorando técnicas de busca, organização de dados e análise de desempenho.
+# Métodos de Pesquisa e Ordenação
+
+Implementações de algoritmos de pesquisa e ordenação desenvolvidas na disciplina de Métodos de Pesquisa e Ordenação.
+
+**Professor:** Nome do Professor
+
+## Tecnologias
+
+- Java
+- Python
