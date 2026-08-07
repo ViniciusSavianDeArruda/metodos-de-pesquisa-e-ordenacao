@@ -12,7 +12,6 @@
 - Árvores B
 
 ---
-
 ## Conceitos Fundamentais
 
 ### Ordenação
