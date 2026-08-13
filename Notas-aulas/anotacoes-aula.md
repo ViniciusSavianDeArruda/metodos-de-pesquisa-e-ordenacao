@@ -1,4 +1,13 @@
-# Métodos de Pesquisa e Ordenação
+# Métodos de Pesquisa e Ordenação — Anotações
+
+Anotações das aulas da disciplina.
+
+## Índice
+
+- [Aula 1 — Conceitos Iniciais (30/07/2026)](#aula-1--conceitos-iniciais-30072026)
+- [Aula 2 — Padrão MVC](#aula-2--padrão-mvc)
+
+---
 
 ## Aula 1 — Conceitos Iniciais (30/07/2026)
 
@@ -12,16 +21,17 @@
 - Árvores B
 
 ---
-## Conceitos Fundamentais
 
-### Ordenação
+### Conceitos Fundamentais
+
+#### Ordenação
 
 É o processo de organizar uma estrutura de dados (como listas ou vetores) utilizando uma ou mais chaves.
 
 **Objetivo:**
 - Otimizar operações de busca e pesquisa.
 
-### Pesquisa
+#### Pesquisa
 
 Consiste em localizar um elemento dentro de uma estrutura de dados por meio de uma chave.
 
@@ -30,14 +40,14 @@ Consiste em localizar um elemento dentro de uma estrutura de dados por meio de u
 
 ---
 
-## Complexidade de Algoritmos
+### Complexidade de Algoritmos
 
 A complexidade representa o esforço computacional necessário para executar um algoritmo.
 
-- **Alta complexidade:** maior consumo de recursos para atender o esforco imposta -> `tempo`
+- **Alta complexidade:** maior consumo de recursos para atender o esforço imposto → `tempo`
 - **Baixa complexidade:** menor consumo de recursos.
 
-### Notação Big-O
+#### Notação Big-O
 
 | Complexidade    | Nível        |
 | --------------- | ------------ |
@@ -49,30 +59,52 @@ A complexidade representa o esforço computacional necessário para executar um 
 
 ---
 
-## Estabilidade
+### Estabilidade
 
 Refere-se ao comportamento da estrutura durante o processo de ordenação, indicando o quanto os elementos precisam ser reorganizados até que a estrutura esteja ordenada.
 
 ---
 
-## Bubble Sort (Ordenação por Bolha)
+### Bubble Sort (Ordenação por Bolha)
 
 É um método básico da programação para organizar uma lista de números:
+
 - Compara dois itens vizinhos por vez.
 - Troca-os de lugar caso estejam na ordem errada.
 - Repete o processo até que a lista esteja ordenada.
 
 ---
 
-## Dúvidas
+### Dúvidas
 
 - Como equilibrar o custo de um sistema de alta complexidade quando ele precisa lidar com muitas tarefas simples ao mesmo tempo?
 
-# Desafio
-- Criar uma classe que tenha metodos para:
-  - ler dados de arquivo (inseridos um abaixo do outro) e popular em uma lista
-  - exibir a lista populada
-- Fazer um programa principal que tenha um menu:
-  - Carregar arquivo
-  - Mostrar dados do arquivo
-  opcao:
+---
+
+### Desafio
+
+Criar uma classe que tenha métodos para:
+
+- ler dados de arquivo (inseridos um abaixo do outro) e popular em uma lista
+- exibir a lista populada
+
+Fazer um programa principal que tenha um menu:
+
+- Carregar arquivo
+- Mostrar dados do arquivo
+
+---
+
+## Aula 2 — Padrão MVC
+
+Conceitos do padrão **MVC (Model-View-Controller)** e sua importância na organização dos códigos.
+
+Apresentação da ideia do projeto **IdeiaMVC**, utilizando essa arquitetura para desenvolver os trabalhos da disciplina.
+
+A organização será dividida em:
+
+- **Model:** responsável pelos dados e regras do sistema.
+- **View:** responsável pela exibição das informações.
+- **Controller:** responsável por controlar a comunicação entre Model e View.
+
+**Objetivo:** manter o código mais organizado e separado por responsabilidades.
