@@ -238,3 +238,86 @@ Em vez de implementar um algoritmo manualmente, podemos simplesmente usar:
 
 ```csharp
 lista.Sort();
+```
+
+## Aula 4
+Aplicação de avaliação prática para consolidação dos conceitos de algoritmos de pesquisa e métodos de ordenação de dados.
+
+
+# Aula 5 — Pesquisa e Ordenação
+
+## Pente — Comb Sort
+
+O **Comb Sort** é baseado no **Bubble Sort**, buscando melhorar seu desempenho.
+
+A principal diferença é que ele realiza comparações entre elementos com uma **distância X**, fazendo uma pré-organização da lista e reduzindo a quantidade de comparações e trocas.
+
+### Características
+
+- **Instável**
+- **Memória interna**
+- Baseado no **Bubble Sort**
+- Utiliza comparações com uma **distância**
+- Adequado para listas/estruturas prontas
+
+### Variáveis
+
+- `i` → controla a posição da lista
+- `houveTroca` → verifica se ocorreu troca
+- `tmp` → auxiliar para troca
+- `distancia` → distância entre os elementos comparados
+
+### Distância
+
+A distância começa com o tamanho da lista e é reduzida por `1.3`:
+
+```java
+distancia = (int) (distancia / 1.3);
+
+Quando for menor que 1, passa a ser 1.
+
+Exemplo:
+
+7 → 5 → 3 → 2 → 1
+
+Quando chega em 1, passa a comparar elementos vizinhos, como no Bubble Sort.
+
+Exemplo
+7  1  4  2  3  9  8
+2  1  4  7  3  9  8
+2  1  3  7  4  9  8
+1  2  3  4  7  8  9
+
+### Código
+
+```java
+void pente(List<Integer> lista) {
+    boolean houveTroca;
+    int tmp;
+    int distancia = lista.size();
+
+    do {
+        distancia = (int) (distancia / 1.3);
+
+        if (distancia < 1) {
+            distancia = 1;
+        }
+
+        houveTroca = false;
+
+        for (int i = 0; i + distancia < lista.size(); i++) {
+            if (lista.get(i) > lista.get(i + distancia)) {
+                houveTroca = true;
+
+                tmp = lista.get(i);
+                lista.set(i, lista.get(i + distancia));
+                lista.set(i + distancia, tmp);
+            }
+        }
+
+    } while (houveTroca || distancia > 1);
+}
+```
+
+
+
