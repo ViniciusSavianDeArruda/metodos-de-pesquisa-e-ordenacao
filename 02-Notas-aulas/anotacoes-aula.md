@@ -319,5 +319,29 @@ void pente(List<Integer> lista) {
 }
 ```
 
+# Aula 6
+
+Mergesort
+    - Categoria de codificacao complexa
+    - Complexidade: O(n * log n)
+    - Implementado no ecossistema Java
+    - Metodo recursivo que divide a estrtura para ordenar(principio de arvore)
+        - primeiro metodo = recrusao
+        - segundo metodo: Intercalacao --> aqui ocorre a ordenacao e é o retorno e é chamada na volta do empilhamento ou da chamada recursiva
+
+Quicksort
+    - Categoria de codificacao complexa
+    - Complexidade: O(n * log n)
+    - Implementado no ecossistema C#
+    - Metodo recursivo que divide a estrtura para ordenar(principio de arvore)
+        - primeiro metodo: recursao
+        - segundo metodo: posicionar o pivo na estrutura
+        - NUNCA divide a estrutura de forma uniforme(PIVO)
+
+
+
+Obs: Medir o esforco é complexidade \ troca
+O(h!) --> pior de todos
+
 
 
