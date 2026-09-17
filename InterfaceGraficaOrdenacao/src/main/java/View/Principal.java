@@ -7,6 +7,7 @@ package view;
 import model.Model;
 import Controller.Ordenacao;
 import Controller.Util;
+import javax.swing.table.DefaultTableModel;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -31,6 +32,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldNomeArquivo = new javax.swing.JTextField();
         jButtonAbrir = new javax.swing.JButton();
@@ -47,6 +52,34 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldQtdTrocas = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextFieldTempo = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblOrdenacao = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesquisa e Ordenação");
@@ -86,23 +119,38 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldTempo.setEditable(false);
         jTextFieldTempo.setEnabled(false);
 
+        tblOrdenacao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Metodo", "Quantidade Comparacoes", "Quantidade Trocas", "Tempo (ms)"
+            }
+        ));
+        jScrollPane3.setViewportView(tblOrdenacao);
+
         javax.swing.GroupLayout jPanelResultadosLayout = new javax.swing.GroupLayout(jPanelResultados);
         jPanelResultados.setLayout(jPanelResultadosLayout);
         jPanelResultadosLayout.setHorizontalGroup(
             jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelResultadosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldQtdNumeros)
-                    .addComponent(jTextFieldQtdComparacoes)
-                    .addComponent(jTextFieldQtdTrocas)
-                    .addComponent(jTextFieldTempo))
+                    .addGroup(jPanelResultadosLayout.createSequentialGroup()
+                        .addGroup(jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldQtdNumeros)
+                            .addComponent(jTextFieldQtdComparacoes)
+                            .addComponent(jTextFieldQtdTrocas)
+                            .addComponent(jTextFieldTempo)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResultadosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanelResultadosLayout.setVerticalGroup(
@@ -124,7 +172,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,15 +192,14 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonAbrir, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jTextFieldNomeArquivo)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonExecutar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBoxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                            .addComponent(jComboBoxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,28 +238,28 @@ public class Principal extends javax.swing.JFrame {
                 case 0:     //bolha
                     metricas.clear();
                     tempoInicio = System.nanoTime();
-                    metricas.addAll(Controller.Ordenacao.bolha(Model.lista));
+                    metricas.addAll(Controller.Ordenacao.bolha(listaCopia));
                     tempoFim = System.nanoTime();
                     metricas.add((float) (tempoFim - tempoInicio) / 1000000);
                     break;
                 case 1:     //insercao
                     metricas.clear();
                     tempoInicio = System.nanoTime();
-                    metricas.addAll(Controller.Ordenacao.insercao(Model.lista));
+                    metricas.addAll(Controller.Ordenacao.insercao(listaCopia));
                     tempoFim = System.nanoTime();
                     metricas.add((float) (tempoFim - tempoInicio) / 1000000);
                     break;
                 case 2:     //pente
                     metricas.clear();
                     tempoInicio = System.nanoTime();
-                    metricas.addAll(Controller.Ordenacao.pente(Model.lista));
+                    metricas.addAll(Controller.Ordenacao.pente(listaCopia));
                     tempoFim = System.nanoTime();
                     metricas.add((float) (tempoFim - tempoInicio) / 1000000);
                     break;
                 case 3:     //selecao
                     metricas.clear();
                     tempoInicio = System.nanoTime();
-                    metricas.addAll(Controller.Ordenacao.selecao(Model.lista));
+                    metricas.addAll(Controller.Ordenacao.selecao(listaCopia));
                     tempoFim = System.nanoTime();
                     metricas.add((float) (tempoFim - tempoInicio) / 1000000);
                     break;
@@ -221,7 +270,17 @@ public class Principal extends javax.swing.JFrame {
             jTextFieldQtdComparacoes.setText("" + metricas.get(0));
             jTextFieldQtdTrocas.setText("" + metricas.get(1));
             jTextFieldTempo.setText("" + metricas.get(2));
-        }
+            
+            DefaultTableModel modeloTabela = (DefaultTableModel) tblOrdenacao.getModel();
+
+            modeloTabela.addRow(new Object[]{
+            jComboBoxMetodos.getSelectedItem(),
+            metricas.get(0).longValue(),
+            metricas.get(1).longValue(),
+            metricas.get(2)
+        });  
+    }
+        
     }//GEN-LAST:event_jButtonExecutarActionPerformed
 
     private void jButtonAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirActionPerformed
@@ -290,10 +349,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanelResultados;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextFieldNomeArquivo;
     private javax.swing.JTextField jTextFieldQtdComparacoes;
     private javax.swing.JTextField jTextFieldQtdNumeros;
     private javax.swing.JTextField jTextFieldQtdTrocas;
     private javax.swing.JTextField jTextFieldTempo;
+    private javax.swing.JTable tblOrdenacao;
     // End of variables declaration//GEN-END:variables
 }
