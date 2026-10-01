@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package View;
 
 import model.Model;
 import Controller.Ordenacao;
@@ -94,7 +94,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("Métodos de Ordenação:");
 
-        jComboBoxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bolha", "Inserção", "Pente", "Seleção", " " }));
+        jComboBoxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bolha", "Inserção", "Pente", "Seleção", "Shake", "Shell" }));
 
         jButtonExecutar.setText("Executar");
         jButtonExecutar.addActionListener(this::jButtonExecutarActionPerformed);
@@ -262,6 +262,28 @@ public class Principal extends javax.swing.JFrame {
                     metricas.addAll(Controller.Ordenacao.selecao(listaCopia));
                     tempoFim = System.nanoTime();
                     metricas.add((float) (tempoFim - tempoInicio) / 1000000);
+                    break;
+                case 4:     //shake
+                    metricas.clear();
+                    tempoInicio = System.nanoTime();
+                    metricas.addAll(
+                        Controller.Ordenacao.shake(listaCopia)
+                    );
+                    tempoFim = System.nanoTime();
+                    metricas.add(
+                        (float) (tempoFim - tempoInicio) / 1000000
+                    );
+                    break;
+                case 5:     //shell
+                    metricas.clear();
+                    tempoInicio = System.nanoTime();
+                    metricas.addAll(
+                        Controller.Ordenacao.shell(listaCopia)
+                    );
+                    tempoFim = System.nanoTime();
+                    metricas.add(
+                        (float) (tempoFim - tempoInicio) / 1000000
+                    );
                     break;
                 default:
                     throw new AssertionError();
