@@ -345,68 +345,84 @@ O(h!) --> pior de todos
 
 ---
 
-### Aula 7
+# Aula 7 — Métodos de Ordenação
 
------
+## 1. Introdução
 
-using System.ComponentModel;
+A **ordenação** organiza elementos de uma estrutura de dados e pode facilitar operações de busca e pesquisa.
 
-Métodos de Ordenação
-    - Ordenar é um recurso para busca ou pesquisa otimizada
-    - Categorias de algoritmos de ordenação
-        - Simplicidade versus complicação (quantidade do código)
-            simples:
-                - bolha
-                - seleção
-                - inserção
-                - agitação
-                - pente
-            complicado:
-                - merge
-                - quick
-        - Estabilidade versus instalibilidade
-            estável:
-                - bolha
-                - agitação
-                - inserção
-                - merge
-            instáveis:
-                - seleção
-                - pente (por causa da distância ou gap ou h)
-                - quick (por causa da distância)
-        - Complexidade: alta (muito esforço) versus baixa (pouco esforço)
-            - como se calcula esforço ou a complexidade em ordenação (QUANTIDADE de comparações + QUANTIDADE de trocas)
-            - funções de complexidade:
-                - O(n!) - fatorial
-                - O(n^k) - polinomial
-                - O(n^2) - exponencial
-                - O(n . log n) - linear vezes logaritmica
-                - O(n) - linear
-                - O(log n) - logartimica (todos os algoritmos baseados na filosofia de ÁRVORE)
-        - Peculiaridades
-            - bolha - agitação - inserção: se a estrutura já estiver ordenada, há baixo esforço - O(n)
-            - pente: com a entrada da distância, o pente fica muito melhor em termos de complexidade. O pente trabalha com distância. Enquanto a distância for maior que 1, o método é instável. Quando a distância fica 1, o método se transforma no bolha e fica estável.
-            - seleção: se um vetor estiver ordenado, o método continua fazendo o mesmo esforço de ordenação de um vetor desordenado
-            - merge e o quick: são baseados em técnicas recursivas. Para cada método, há 2 submétodos
-                - merge: chamada recursiva e o submétodo intercalação (ordenação se dá na volta do empilhamento)
-                    - Java o utiliza
-                - quick: chamada recursiva e o submétodo posicionar (posicionar o pivo no seu lugar certo, no empilhamento)
-                    - C# o utiliza
+## 2. Categorias de algoritmos de ordenação
 
-    - Outros métodos de ordenação
-        - Shell sort: é uma evolução do inserção. Usa a mesma filosofia de melhora do pente com o bolha. Ou seja, aplica uso de distância (gap). Como o pente, o Shell, ao trabalhar com distância, é instável. Mas quando a distância fica 1, ele se transforma no inserção e passa a ser estável.
+### 2.1. Simplicidade de implementação
 
-        - Heap sort: baseado na teoria de árvore, porém, dentro de uma lista
+A classificação abaixo considera a facilidade de compreender e implementar os métodos (não necessariamente seu desempenho).
 
-        - Bucket sort: método de ordenação pelo dígito do número
+| Mais simples | Mais elaborados |
+| --- | --- |
+| Bolha (Bubble Sort) | Merge Sort |
+| Seleção (Selection Sort) | Quick Sort |
+| Inserção (Insertion Sort) | |
+| Agitação (Shaker Sort) | |
+| Pente (Comb Sort) | |
 
-        - Radix sort: melhoria do Bucket
+### 2.2. Estabilidade
 
-void bolha(List<int> lista)
+Um algoritmo é **estável** quando preserva a ordem relativa dos elementos que possuem chaves iguais.
+
+| Estáveis (implementações usuais) | Instáveis (implementações usuais) |
+| --- | --- |
+| Bolha | Seleção |
+| Agitação | Pente |
+| Inserção | Quick Sort |
+| Merge Sort | |
+
+> A estabilidade depende da implementação. No Pente, mesmo que a distância (`gap`) chegue a 1, as trocas feitas anteriormente podem ter alterado a ordem de elementos iguais. Por isso, o algoritmo completo continua sendo considerado instável. O mesmo cuidado vale para o Shell Sort.
+
+### 2.3. Complexidade
+
+A complexidade descreve como o esforço de execução cresce conforme aumenta o tamanho da entrada (`n`). Na análise de algoritmos de ordenação, é comum observar a **quantidade de comparações**, a **quantidade de trocas ou movimentações** e o tempo de execução.
+
+| Notação | Classificação |
+| --- | --- |
+| `O(n!)` | Fatorial |
+| `O(n^k)` | Polinomial (para `k` constante positivo) |
+| `O(n²)` | Quadrática (caso particular da polinomial) |
+| `O(n log n)` | Linearítmica |
+| `O(n)` | Linear |
+| `O(log n)` | Logarítmica |
+
+> **Atenção:** `O(n²)` não é exponencial; uma complexidade exponencial típica é `O(2^n)`. Nem todo algoritmo com árvores tem complexidade `O(log n)` para a operação completa.
+
+## 3. Particularidades dos métodos
+
+- **Bolha, Agitação e Inserção:** em versões apropriadas, quando os dados já estão ordenados, podem realizar apenas `O(n)` operações no melhor caso. No Bolha e na Agitação, isso exige uma verificação de trocas para encerrar antecipadamente.
+- **Pente:** usa uma distância (`gap`) entre os elementos comparados, reduzindo-a progressivamente. Quando `gap = 1`, passa a executar comparações adjacentes semelhantes às do Bolha, mas o método completo não se torna estável.
+- **Seleção:** em sua implementação tradicional, continua realizando aproximadamente a mesma quantidade de comparações mesmo quando o vetor já está ordenado: `O(n²)`.
+- **Merge Sort e Quick Sort:** são normalmente implementados por **divisão e conquista**, utilizando recursão.
+  - **Merge Sort:** divide os dados recursivamente e ordena durante a **intercalação** das partes, na volta das chamadas recursivas.
+  - **Quick Sort:** escolhe um **pivô**, particiona os elementos ao seu redor e ordena recursivamente as partições. O pivô não precisa estar na posição final em todas as variantes da partição.
+
+> **Sobre linguagens:** Java e C# possuem bibliotecas de ordenação próprias, cujos algoritmos variam conforme o tipo de coleção e a versão da plataforma. Não é correto afirmar, de forma geral, que Java sempre utiliza Merge Sort ou C# sempre utiliza Quick Sort.
+
+## 4. Outros métodos de ordenação
+
+- **Shell Sort:** evolução do Inserção; realiza inserções entre elementos separados por uma distância (`gap`), que diminui até chegar a 1. É, em geral, **instável**, mesmo que a etapa final seja uma inserção com distância 1.
+- **Heap Sort:** usa a estrutura lógica de uma **árvore heap**, que pode ser representada dentro de um vetor ou lista.
+- **Bucket Sort:** distribui os elementos em **baldes (buckets)**, ordena cada balde e reúne os resultados. Não deve ser confundido com ordenação por dígitos.
+- **Radix Sort:** ordena usando sucessivamente **dígitos ou posições** das chaves, frequentemente com um método estável de distribuição, como Counting Sort.
+
+## 5. Exemplo de código em C# — Pente (Comb Sort)
+
+O exemplo das anotações usa uma distância que é dividida por `1,3` a cada passagem. Portanto, representa o **Pente (Comb Sort)**, apesar de ter sido nomeado `bolha` no código original.
+
+```csharp
+using System.Collections.Generic;
+
+public static void Pente(List<int> lista)
 {
-    int tmp;
+    int dist = lista.Count;
     bool houveTroca;
-    int dist = lista.Count();
+
     do
     {
         dist = (int)(dist / 1.3);
@@ -414,21 +430,53 @@ void bolha(List<int> lista)
         {
             dist = 1;
         }
+
         houveTroca = false;
-        for (int i = 0; i+dist < lista.Count() - 1; i++)
+
+        for (int i = 0; i + dist < lista.Count; i++)
         {
             if (lista[i] > lista[i + dist])
             {
+                int tmp = lista[i];
+                lista[i] = lista[i + dist];
+                lista[i + dist] = tmp;
                 houveTroca = true;
-                tmp = lista[i];
-                lista[i] = lista[i+dist];
-                lista[i+dist] = tmp;
             }
         }
     } while (dist > 1 || houveTroca);
 }
+```
 
-</script>
+**Correção importante:** o limite do `for` é `i + dist < lista.Count`. No código original, `i + dist < lista.Count() - 1` deixava de comparar o último elemento em cada passagem.
+
+### Como funciona
+
+1. A distância começa no tamanho da lista.
+2. A cada passagem, a distância é reduzida por um fator de `1,3`, até atingir 1.
+3. Elementos separados pela distância são comparados e trocados se estiverem fora de ordem.
+4. O processo termina quando a distância é 1 e uma passagem completa ocorre sem trocas.
+
+---
+
+### Aula 8 - Introducao a Pesquisa/ / Busca
+
+Pesquisa ou busca é o processo de localizar um elemento específico dentro de uma coleção de dados. Existem diferentes métodos de pesquisa, cada um com suas próprias características e eficiências. A escolha do método de pesquisa adequado depende do tipo de dados, da estrutura da coleção e dos requisitos de desempenho.
+
+Exemplos de métodos de pesquisa incluem:
+
+- **Pesquisa Linear (Busca Sequencial)**: Examina cada elemento da coleção, um por um, até encontrar o elemento desejado ou chegar ao final da coleção. É simples, mas pode ser ineficiente para grandes conjuntos de dados.
+
+- **Pesquisa Binária**: Requer que a coleção esteja ordenada. Divide repetidamente a coleção ao meio, comparando o elemento do meio com o elemento desejado, até encontrar o elemento ou determinar que ele não está presente. É muito eficiente para grandes conjuntos de dados ordenados.
+
+- **Pesquisa por Interpolação**: Semelhante à pesquisa binária, mas estima a posição do elemento desejado com base em uma função de interpolação. Pode ser mais eficiente que a pesquisa binária em certas distribuições de dados.
+
+- **Pesquisa em Árvores**: Utiliza estruturas de dados em árvore, como árvores binárias de busca, para localizar elementos. A eficiência depende da altura da árvore e da distribuição dos elementos.
+
+- **Pesquisa em Hashing**: Utiliza funções de hash para mapear elementos a índices em uma tabela de hash, permitindo acesso rápido aos elementos. A eficiência depende da qualidade da função de hash e da gestão de colisões.
+
+- **Pesquisa em Grafos**: Utiliza algoritmos específicos para explorar grafos, como busca em largura (BFS) e busca em profundidade (DFS), para localizar elementos ou caminhos dentro de uma estrutura de grafo.
+
+
 
 
 
