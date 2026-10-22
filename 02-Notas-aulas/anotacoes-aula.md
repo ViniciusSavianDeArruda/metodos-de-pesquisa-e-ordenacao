@@ -2,11 +2,6 @@
 
 Anotações das aulas da disciplina.
 
-## Índice
-
-- [Aula 1 — Conceitos Iniciais (30/07/2026)](#aula-1--conceitos-iniciais-30072026)
-- [Aula 2 — Padrão MVC](#aula-2--padrão-mvc)
-
 ---
 
 ## Aula 1 — Conceitos Iniciais (30/07/2026)
@@ -476,6 +471,34 @@ Exemplos de métodos de pesquisa incluem:
 
 - **Pesquisa em Grafos**: Utiliza algoritmos específicos para explorar grafos, como busca em largura (BFS) e busca em profundidade (DFS), para localizar elementos ou caminhos dentro de uma estrutura de grafo.
 
+---
+
+### Aula 9 - Hash ou Tabelas Hash — O(1)
+
+
+- Técnica de **espalhamento (hashing)** ou posicionamento por endereço, calculado a partir de uma chave de entrada.
+
+- Técnica utilizada pelo Sistema Operacional (SO) para o gerenciamento de arquivos em memória secundária. Quando um arquivo é criado, o SO pode aplicar uma função hash sobre um dos campos do arquivo (chave), geralmente um identificador, para definir uma posição na memória secundária.
+
+## Vantagens da técnica
+
+- Acesso direto, permitindo otimizar a pesquisa e a busca de dados.
+
+## Problema que pode ocorrer
+
+- **Colisão:** ocorre quando chaves diferentes levam ao mesmo endereço na tabela hash.
+
+## Subtécnicas de tratamento de colisão
+
+- **Via uso de vetor (alocação estática):**
+  - Open Addressing (endereçamento aberto), utilizando uma **tabela hash fechada**, que possui limite definido pelo tamanho do vetor.
+
+- **Via uso de lista encadeada (alocação dinâmica):**
+  - Linked List (lista encadeada), utilizando uma **tabela hash aberta**, limitada principalmente pela memória disponível.
+
+## Aplicação
+
+- Ideais para estruturas de dados muito grandes, pois facilitam o espalhamento dos dados e ajudam a reduzir a ocorrência de colisões.
 
 
 
