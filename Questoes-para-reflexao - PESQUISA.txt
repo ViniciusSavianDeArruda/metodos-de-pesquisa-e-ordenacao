@@ -1,0 +1,32 @@
+1 - No universo de programação, baseada em Estruturas de Dados e Orientação a Objetos, há classes ou estruturas para armazenar dados em memória. Cite e explique as 3 principais estruturas em que
+programadores armazenam dados em memória e conseguem acessar dadosde maneira mais eficaz.
+
+R: As três estruturas são vetores (arrays), listas encadeadas e tabelas hash. Os vetores armazenam elementos em posições consecutivas de memória e permitem acesso rápido por índice. As listas encadeadas armazenam
+elementos em nós ligados por referências, facilitando inserções e remoções em determinadas situações. As tabelas hash utilizam uma função hash para calcular a posição de armazena
+
+
+
+2 - Dentro dos métodos de pesquisa, há o sequencial e o binário. Entretanto, a pesquisa binária mostra-se muito mais eficaz
+Para usá-la, como a estrutura deve se apresentar e qual a filosofia de trabalho da pesquisa binária.
+
+R: Para utilizar a pesquisa binária, os dados devem estar ordenados, em ordem crescente ou decrescente. O algoritmo compara o valor procurado com o elemento do meio da estrutura. Se o valor procurado for menor, a
+busca continua na metade esquerda; se for maior, continua na metade direita. Esse processo se repete até encontrar o elemento ou concluir que ele não existe. Sua complexidade é O(log n).
+
+
+
+3 - No universo de Tabelas Hash (técnica de espalhamento), os dados são armazenados e acessados rapidamente, com uma complexidade O(1). Qual o recurso utilizado para que isso aconteça.
+
+R: As tabelas hash utilizam uma função hash, que transforma uma chave em um índice ou endereço de armazenamento. Assim, é possível localizar os dados diretamente, sem percorrer todos os elementos. Por isso, o acesso
+tem complexidade média O(1), embora colisões possam aumentar o tempo de busca.
+
+
+4 - Tendo como base o algoritmo de pesquisa binária, contabilize e mostra quantas comparações ocorrem na estrutura até o número 24 serlocalizado na lista.
+
+Lista: 10, 15, 20, 24, 25, 30, 35, 40, 45.
+
+R: A pesquisa binária realiza 4 comparações:
+
+1ª comparação: o elemento do meio é 25. Como 24 é menor que 25, a busca continua na metade esquerda. 2ª comparação: o elemento do meio da parte restante é 15. Como 24 é maior que 15, a busca continua à direita de 15.
+3ª comparação: o elemento do meio da parte restante é 20. Como 24 é maior que 20, a busca continua à direita de 20. 4ª comparação: o elemento encontrado é 24. A pesquisa termina.
+
+Portanto, o número 24 é localizado após 4 comparações.
