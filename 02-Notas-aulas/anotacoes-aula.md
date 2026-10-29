@@ -24,6 +24,7 @@ Anotações das aulas da disciplina.
 É o processo de organizar uma estrutura de dados (como listas ou vetores) utilizando uma ou mais chaves.
 
 **Objetivo:**
+
 - Otimizar operações de busca e pesquisa.
 
 #### Pesquisa
@@ -31,6 +32,7 @@ Anotações das aulas da disciplina.
 Consiste em localizar um elemento dentro de uma estrutura de dados por meio de uma chave.
 
 **Recuperação de dados:**
+
 - Busca informações considerando sua relevância ou significado.
 
 ---
@@ -44,13 +46,13 @@ A complexidade representa o esforço computacional necessário para executar um 
 
 #### Notação Big-O
 
-| Complexidade    | Nível        |
-| --------------- | ------------ |
-| `O(n!)`         | Muito alta   |
-| `O(n^x)`        | Alta         |
-| `O(n + log n)`  | Média        |
-| `O(n)`          | Linear       |
-| `O(log n)`      | Baixa        |
+| Complexidade   | Nível      |
+| -------------- | ---------- |
+| `O(n!)`        | Muito alta |
+| `O(n^x)`       | Alta       |
+| `O(n + log n)` | Média      |
+| `O(n)`         | Linear     |
+| `O(log n)`     | Baixa      |
 
 ---
 
@@ -114,7 +116,7 @@ Nesta aula foram estudados os seguintes métodos de ordenação:
 - Selection Sort (Ordenação por Seleção)
 - Insertion Sort (Ordenação por Inserção)
 - `List.Sort()` — método nativo de ordenação
-do C#
+  do C#
 
 # Aula 3 - Métodos de Ordenação
 
@@ -134,6 +136,7 @@ Exemplo:
 Repete esse processo até que a lista esteja ordenada.
 
 **Fácil de lembrar:**
+
 > Compara os vizinhos e vai empurrando os maiores para o final.
 
 ---
@@ -152,6 +155,7 @@ Exemplo:
 - Coloca `4` na segunda posição → `[2, 4, 5]`
 
 **Fácil de lembrar:**
+
 > Procura o menor e coloca no lugar.
 
 ---
@@ -236,8 +240,8 @@ lista.Sort();
 ```
 
 ## Aula 4
-Aplicação de avaliação prática para consolidação dos conceitos de algoritmos de pesquisa e métodos de ordenação de dados.
 
+Aplicação de avaliação prática para consolidação dos conceitos de algoritmos de pesquisa e métodos de ordenação de dados.
 
 # Aula 5 — Pesquisa e Ordenação
 
@@ -266,7 +270,7 @@ A principal diferença é que ele realiza comparações entre elementos com uma 
 
 A distância começa com o tamanho da lista e é reduzida por `1.3`:
 
-```java
+````java
 distancia = (int) (distancia / 1.3);
 
 Quando for menor que 1, passa a ser 1.
@@ -312,28 +316,13 @@ void pente(List<Integer> lista) {
 
     } while (houveTroca || distancia > 1);
 }
-```
+````
 
 # Aula 6
 
-Mergesort
-    - Categoria de codificacao complexa
-    - Complexidade: O(n * log n)
-    - Implementado no ecossistema Java
-    - Metodo recursivo que divide a estrtura para ordenar(principio de arvore)
-        - primeiro metodo = recrusao
-        - segundo metodo: Intercalacao --> aqui ocorre a ordenacao e é o retorno e é chamada na volta do empilhamento ou da chamada recursiva
+Mergesort - Categoria de codificacao complexa - Complexidade: O(n \* log n) - Implementado no ecossistema Java - Metodo recursivo que divide a estrtura para ordenar(principio de arvore) - primeiro metodo = recrusao - segundo metodo: Intercalacao --> aqui ocorre a ordenacao e é o retorno e é chamada na volta do empilhamento ou da chamada recursiva
 
-Quicksort
-    - Categoria de codificacao complexa
-    - Complexidade: O(n * log n)
-    - Implementado no ecossistema C#
-    - Metodo recursivo que divide a estrtura para ordenar(principio de arvore)
-        - primeiro metodo: recursao
-        - segundo metodo: posicionar o pivo na estrutura
-        - NUNCA divide a estrutura de forma uniforme(PIVO)
-
-
+Quicksort - Categoria de codificacao complexa - Complexidade: O(n \* log n) - Implementado no ecossistema C# - Metodo recursivo que divide a estrtura para ordenar(principio de arvore) - primeiro metodo: recursao - segundo metodo: posicionar o pivo na estrutura - NUNCA divide a estrutura de forma uniforme(PIVO)
 
 Obs: Medir o esforco é complexidade \ troca
 O(h!) --> pior de todos
@@ -352,24 +341,24 @@ A **ordenação** organiza elementos de uma estrutura de dados e pode facilitar 
 
 A classificação abaixo considera a facilidade de compreender e implementar os métodos (não necessariamente seu desempenho).
 
-| Mais simples | Mais elaborados |
-| --- | --- |
-| Bolha (Bubble Sort) | Merge Sort |
-| Seleção (Selection Sort) | Quick Sort |
-| Inserção (Insertion Sort) | |
-| Agitação (Shaker Sort) | |
-| Pente (Comb Sort) | |
+| Mais simples              | Mais elaborados |
+| ------------------------- | --------------- |
+| Bolha (Bubble Sort)       | Merge Sort      |
+| Seleção (Selection Sort)  | Quick Sort      |
+| Inserção (Insertion Sort) |                 |
+| Agitação (Shaker Sort)    |                 |
+| Pente (Comb Sort)         |                 |
 
 ### 2.2. Estabilidade
 
 Um algoritmo é **estável** quando preserva a ordem relativa dos elementos que possuem chaves iguais.
 
 | Estáveis (implementações usuais) | Instáveis (implementações usuais) |
-| --- | --- |
-| Bolha | Seleção |
-| Agitação | Pente |
-| Inserção | Quick Sort |
-| Merge Sort | |
+| -------------------------------- | --------------------------------- |
+| Bolha                            | Seleção                           |
+| Agitação                         | Pente                             |
+| Inserção                         | Quick Sort                        |
+| Merge Sort                       |                                   |
 
 > A estabilidade depende da implementação. No Pente, mesmo que a distância (`gap`) chegue a 1, as trocas feitas anteriormente podem ter alterado a ordem de elementos iguais. Por isso, o algoritmo completo continua sendo considerado instável. O mesmo cuidado vale para o Shell Sort.
 
@@ -377,14 +366,14 @@ Um algoritmo é **estável** quando preserva a ordem relativa dos elementos que 
 
 A complexidade descreve como o esforço de execução cresce conforme aumenta o tamanho da entrada (`n`). Na análise de algoritmos de ordenação, é comum observar a **quantidade de comparações**, a **quantidade de trocas ou movimentações** e o tempo de execução.
 
-| Notação | Classificação |
-| --- | --- |
-| `O(n!)` | Fatorial |
-| `O(n^k)` | Polinomial (para `k` constante positivo) |
-| `O(n²)` | Quadrática (caso particular da polinomial) |
-| `O(n log n)` | Linearítmica |
-| `O(n)` | Linear |
-| `O(log n)` | Logarítmica |
+| Notação      | Classificação                              |
+| ------------ | ------------------------------------------ |
+| `O(n!)`      | Fatorial                                   |
+| `O(n^k)`     | Polinomial (para `k` constante positivo)   |
+| `O(n²)`      | Quadrática (caso particular da polinomial) |
+| `O(n log n)` | Linearítmica                               |
+| `O(n)`       | Linear                                     |
+| `O(log n)`   | Logarítmica                                |
 
 > **Atenção:** `O(n²)` não é exponencial; uma complexidade exponencial típica é `O(2^n)`. Nem todo algoritmo com árvores tem complexidade `O(log n)` para a operação completa.
 
@@ -473,8 +462,9 @@ Exemplos de métodos de pesquisa incluem:
 
 ---
 
-### Aula 9 - Hash ou Tabelas Hash — O(1)
+<<<<<<< HEAD
 
+### Aula 9 - Hash ou Tabelas Hash — O(1)
 
 - Técnica de **espalhamento (hashing)** ou posicionamento por endereço, calculado a partir de uma chave de entrada.
 
@@ -498,9 +488,162 @@ Exemplos de métodos de pesquisa incluem:
 
 ## Aplicação
 
-- Ideais para estruturas de dados muito grandes, pois facilitam o espalhamento dos dados e ajudam a reduzir a ocorrência de colisões.
+- # Ideais para estruturas de dados muito grandes, pois facilitam o espalhamento dos dados e ajudam a reduzir a ocorrência de colisões.
 
+### Aula 9 - Hash (Tabela Hash)
 
+#### 1. O que é Hash?
 
+**Hash** é uma técnica de espalhamento que utiliza uma função matemática para calcular a posição onde um dado será armazenado, a partir de uma chave.
 
+- **Complexidade média:** O(1) para busca, inserção e remoção.
+- **Objetivo:** facilitar o armazenamento e a localização de dados.
+- **Vantagem:** acesso direto e pesquisa rápida.
+- **Aplicações:** sistemas operacionais, bancos de dados, caches e estruturas de dados.
 
+#### 2. Função Hash
+
+A **função hash** recebe uma chave e calcula uma posição na tabela.
+
+Exemplo:
+
+```text
+h(chave) = chave % tamanho_da_tabela
+
+h(25) = 25 % 10 = 5
+```
+
+A chave 25 será armazenada na posição 5 do vetor.
+
+Uma boa função hash deve distribuir as chaves de maneira uniforme para diminuir as colisões.
+
+#### 3. Colisão
+
+A **colisão** ocorre quando duas chaves diferentes geram o mesmo endereço na tabela.
+
+Exemplo:
+
+```text
+h(25) = 25 % 10 = 5
+h(35) = 35 % 10 = 5
+```
+
+As duas chaves tentam ocupar a posição 5.
+
+Para resolver esse problema, são utilizadas técnicas de tratamento de colisões.
+
+#### 4. Tipos de Tabela Hash
+
+**Tabela Hash Fechada:**
+
+- Utiliza um vetor de tamanho limitado.
+- Trabalha com alocação estática.
+- Utiliza endereçamento aberto para resolver colisões.
+- Quando ocorre colisão, procura outra posição livre no vetor.
+
+**Tabela Hash Aberta:**
+
+- Utiliza listas encadeadas.
+- Trabalha com alocação dinâmica.
+- Permite armazenar vários elementos na mesma posição.
+- Seu limite depende da memória disponível.
+
+#### 5. Tratamento de Colisões
+
+**Open Addressing (Endereçamento Aberto)**
+
+Utilizado na tabela hash fechada.
+
+- Procura outra posição disponível no vetor.
+- Todos os elementos ficam armazenados no próprio vetor.
+- Uma técnica comum é a sondagem linear.
+
+Exemplo:
+
+```text
+[0] vazio
+[1] vazio
+[2] vazio
+[3] vazio
+[4] vazio
+[5] 25
+[6] 35  <- colisão resolvida
+[7] vazio
+```
+
+**Linked List (Lista Encadeada)**
+
+Utilizada na tabela hash aberta.
+
+- Cada posição pode apontar para uma lista encadeada.
+- Elementos que geram o mesmo endereço ficam na mesma lista.
+- Permite tratar colisões sem procurar outra posição no vetor.
+
+Exemplo:
+
+```text
+[0] → vazio
+[1] → vazio
+[2] → vazio
+[3] → vazio
+[4] → vazio
+[5] → 25 → 35 → 45 → NULL
+```
+
+#### 6. Vantagens e Desvantagens
+
+**Vantagens:**
+
+- Busca, inserção e remoção rápidas.
+- Acesso direto aos elementos.
+- Boa eficiência para grandes volumes de dados.
+- Reduz a necessidade de pesquisas sequenciais.
+
+**Desvantagens:**
+
+- Possibilidade de colisões.
+- Depende de uma boa função hash.
+- Pode desperdiçar espaço de memória.
+- Muitas colisões diminuem o desempenho.
+
+#### 7. Complexidade
+
+| Operação | Caso médio | Pior caso |
+| -------- | ---------- | --------- |
+| Busca    | O(1)       | O(n)      |
+| Inserção | O(1)       | O(n)      |
+| Remoção  | O(1)       | O(n)      |
+
+O pior caso acontece quando existem muitas colisões.
+
+#### 8. Fator de Carga
+
+O **fator de carga** representa a relação entre a quantidade de elementos armazenados e o tamanho da tabela.
+
+```text
+Fator de carga = elementos / tamanho da tabela
+
+Exemplo:
+7 elementos / 10 posições = 0,7 (70%)
+```
+
+- Quanto maior a ocupação, maior pode ser a quantidade de colisões.
+- Na tabela fechada, é importante manter posições livres.
+- O redimensionamento (rehashing) pode melhorar o desempenho.
+
+#### 9. Resumo
+
+- **Hash:** técnica de espalhamento de dados.
+- **Função hash:** transforma uma chave em uma posição.
+- **O(1):** complexidade média das operações.
+- **Colisão:** chaves diferentes geram a mesma posição.
+- **Tabela fechada:** vetor limitado e endereçamento aberto.
+- **Tabela aberta:** listas encadeadas e alocação dinâmica.
+- **Open Addressing:** procura outra posição livre.
+- **Linked List:** encadeia elementos na mesma posição.
+- **Fator de carga:** indica a ocupação da tabela.
+- **Rehashing:** reorganiza os elementos em uma tabela redimensionada.
+
+**Importante:** tabelas hash são eficientes para grandes volumes de dados quando a função hash distribui bem as chaves e o fator de carga é controlado.
+
+> > > > > > > c3c0129 (docs: adiciona anotacoes e exercicios de hash)
